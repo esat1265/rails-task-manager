@@ -12,5 +12,11 @@
         <%= link_to task['title'], task_path(task["id"]) %>
       </label>
     </div>
+    <%= link_to "Delete",
+      task_path(task),
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+    %>
   <% end %>
 </div>
+
+<%= link_to "Add a new Task", tasks_new_path%>
